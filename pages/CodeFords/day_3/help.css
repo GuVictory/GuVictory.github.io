@@ -1,0 +1,176 @@
+*:focus {
+    outline: none !important;
+}
+
+.help-icon {
+    font-size: 2.5rem;
+}
+
+.hr {
+    width: 60%;
+    height: 1px;
+    margin: 10px 0;
+    background-color: silver;
+    display: flex;
+    align-self: center;
+}
+
+/* Style the tab */
+ .tab {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab__button {
+    display: flex;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: 0.3s;
+    margin: 0 0.5rem;
+    min-width: 128px;
+    background: white;
+    justify-content: center;
+}
+
+/* Change background color of buttons on hover */
+.tab__button:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+/* Create an active/current tablink class */
+.tab__button.active {
+    background-color: rgb(69, 96, 245);
+    color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    flex-direction: column;
+}
+
+.content__found-input {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid silver;
+    outline: none;
+}
+
+
+.help__questions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:  2rem;
+}
+
+.help__questions__header, .help__topics__header,  .help__form__header{
+    margin-bottom: 2rem;
+}
+
+.help__questions__content {
+    display: grid;
+    grid-template-rows: repeat(2, 64px);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+.help__questions__content__card {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.help__questions__content__card:hover, .help__topics__content__card:hover {
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.help__topics {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:  2rem;
+    margin-top: 1rem;
+}
+
+.help__topics__content {
+    display: grid;
+    grid-template-rows: repeat(2, 128px);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+.help__topics__content__card {
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.help__form__container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:  2rem;
+    margin-top: 1rem;
+}
+
+.help__form__header {
+    display: flex;
+}
+
+.help__form {
+    display: grid;
+    grid-template-areas: 
+        "help__form__name help__form__email"
+        "help__form__textarea help__form__textarea"
+        "help__form__btn help__form__btn";
+    grid-template-rows: 50px 128px 50px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+
+.help__form__name, .help__form__email, .help__form__textarea, .help__form__btn {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid silver;
+    outline: none;
+}
+
+
+.help__form__name {
+    grid-area: help__form__name;
+}
+
+.help__form__email {
+    grid-area: help__form__email;
+}
+
+.help__form__textarea {
+    grid-area: help__form__textarea;
+    resize: none;
+}
+
+.help__form__btn{
+    grid-area: help__form__btn;
+    transition: 0.3s;
+    background-color: rgb(69, 96, 245);
+    color: white;
+}
+
+.help__form__btn:hover {
+    background-color:  rgba(221, 221, 221, 1);
+    color: black;
+}

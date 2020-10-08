@@ -1,7 +1,6 @@
+@import url("../../../assets/css/fontawesome-all.min.css");
+
 /**  ---------- Основные общие стили ---------- **/
-html {
-    overflow: hidden;
-}
 
 .body {
     margin: 0;
@@ -22,7 +21,7 @@ html {
     display: flex;
     align-items: center;
     padding: 0 0.5rem;
-    transition: 0.5s linear; /* Время изменения */
+    transition: 0.3s linear; /* Время изменения */
 }
 
 .link_with_icon {
@@ -83,6 +82,8 @@ html {
     height: 64px;
     min-width: 700px;
     width: 80vw;
+
+    border-bottom: 1px solid silver;
 }
 
 .header__logo {
@@ -118,13 +119,19 @@ html {
 }
 
 .content__header {
-    display: grid;
     font-size: 1.5rem;
 }
 
 .content__ol {
     display: grid;
     margin: 1rem;
+}
+
+.content__body {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
 }
 
 /**  ---------- Стили для подвала  ---------- **/

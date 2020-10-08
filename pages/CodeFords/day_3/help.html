@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../day_2/main.css">
+    <link rel="stylesheet" href="../day_2/main-mobile.css">
+    <link rel="stylesheet" href="./help.css">
+    <link rel="stylesheet" href="./help-mobile.css">
+    <title>Help page</title>
+</head>
+<body class="body text">
+
+    <header class="header">
+        <!-- Логотип -->
+        <span class="header__logo text--bold">CodesFord</span>
+
+        <!-- Навигационная панель сайта -->
+        <nav class="header__nav">
+            <a href="#" class="link">Main</a>
+            <a href="#" class="link">Study</a>
+            <a href="#" class="link">Team</a>
+        </nav>
+
+        <!-- Блок с различными кнопками -->
+        <div class="header__btns">
+
+            <!-- Кнопки входа/регистрации -->
+            <a href="#" class="link">Sign in</a>
+            <a href="#" class="link link--primary">Sing up</a>
+
+            <!-- Кнопки переключения языка -->
+            <a href="#" class="link link_with_icon text--bold">
+                <img src="../day_2/img/en.png" class="icon"  alt="Englang flag">
+                En
+            </a>
+            <a href="#" class="link link_with_icon text--bold">
+                <img src="../day_2/img/ru.png" class="icon"  alt="Russian flag">
+                Ru
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <article class="content">
+            <input type="text" placeholder="Чем вам помочь?" class="content__found-input">
+            <section class="content__body">
+                <div class="tab">
+                    <button 
+                        class="tab__button tablinks-js" 
+                        onclick="helpTabChange(event, 'Student')" 
+                        id="defaultOpen">
+                            <span class="text">Студенту</span>
+                    </button>
+                    <button class="tab__button tablinks-js" onclick="helpTabChange(event, 'Instructor')"><span class="text">Инструктору</span></button>
+                </div>
+                  
+                <!-- Tab content -->
+                <div id="Student" class="tabcontent">
+                    <div class="help__questions">
+                        <header class="help__questions__header">
+                            <span class="text text--bold">Часто задаваемые вопросы:</span>
+                        </header>
+                        <section class="help__questions__content">
+                            <div class="help__questions__content__card">
+                                <span class="text">Пожизненный доступ</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Как работает CodeFords</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Как найти пропавший курс</span>
+                            </div>
+
+                            <div class="help__questions__content__card">
+                                <span class="text">Сертификат об окончании</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Загрузка ресурсов курса</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Решение вопроса оплаты</span>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <div class="help__topics">
+                        <header class="help__topics__header">
+                            <span class="text text--bold">Выберите тему для поиска помоши:</span>
+                        </header>
+                        <section class="help__topics__content">
+                            <div class="help__topics__content__card">
+                                <i class="help-icon far fa-grin-stars"></i>
+                                <div class="hr"></div>
+                                <span class="text">Приступая к работе</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon far fa-user-circle"></i>
+                                <div class="hr"></div>
+                                <span class="text">Учетная запись / профиль</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-cogs"></i>
+                                <div class="hr"></div>
+                                <span class="text">Диагностика</span>
+                            </div>
+
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-book"></i>
+                                <div class="hr"></div>
+                                <span class="text">Прохождение курса</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-money-bill-wave"></i>
+                                <div class="hr"></div>
+                                <span class="text">Покупка / Возврат денег</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-mobile-alt"></i>
+                                <div class="hr"></div>
+                                <span class="text">Мобильный</span>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <div class="help__form__container">
+                        <header class="help__form__header">
+                            <span class="text text--bold">Не смогли найти ответ на свой вопрос?</span>
+                        </header>
+                    
+                        <!-- Создаём форму и указываем её обработчик и метод --> 
+                        <form action="#" method="post" name="form" class="help__form"> 
+                            <!-- Поле ввода имени --> 
+                            <input name="name" type="text" placeholder="Ваше имя" class="help__form__name text" /> 
+
+                            <!-- Поле ввода почты --> 
+                            <input name="email" type="text" placeholder="Ваша почта" class="help__form__email text" /> 
+                            <br /> 
+
+                            <!-- Текстовое поле для самого сообщения -->
+                            <textarea cols="32" name="message" rows="5" class="help__form__textarea text" placeholder="Ваш поврос"></textarea>
+                            <br /> 
+                            <!-- Кнопка с надписью «Отправить», которая запускает обработчик формы -->
+                            <input type="submit" value="Отправить" class="help__form__btn text"/> 
+                        </form>
+                    </div>
+                </div>
+
+                <div id="Instructor" class="tabcontent">
+                    <div class="help__questions">
+                        <header class="help__questions__header">
+                            <span class="text text--bold">Часто задаваемые вопросы:</span>
+                        </header>
+                        <section class="help__questions__content">
+                            <div class="help__questions__content__card">
+                                <span class="text">Продвижение своих курсов</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Как выбрать способ оплаты</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Контроль качества курсов</span>
+                            </div>
+
+                            <div class="help__questions__content__card">
+                                <span class="text">Доля дохода инструктора</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Рекламные соглашения</span>
+                            </div>
+                            <div class="help__questions__content__card">
+                                <span class="text">Как стать инструктором</span>
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <div class="hr"></div>
+
+                    <div class="help__topics">
+                        <header class="help__topics__header">
+                            <span class="text text--bold">Выберите тему для поиска помоши:</span>
+                        </header>
+                        <section class="help__topics__content">
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-money-bill-wave"></i>
+                                <div class="hr"></div>
+                                <span class="text">Оплата инструктора</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon far fa-window-maximize"></i>
+                                <div class="hr"></div>
+                                <span class="text">Продажа и продвижение</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon far fa-clipboard"></i>
+                                <div class="hr"></div>
+                                <span class="text">Нормативы и качества</span>
+                            </div>
+
+                            <div class="help__topics__content__card">
+                                <i class="help-icon far fa-edit"></i>
+                                <div class="hr"></div>
+                                <span class="text">Построение курса</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-hammer"></i>
+                                <div class="hr"></div>
+                                <span class="text">Управление курсом</span>
+                            </div>
+                            <div class="help__topics__content__card">
+                                <i class="help-icon fas fa-balance-scale-right"></i>
+                                <div class="hr"></div>
+                                <span class="text">Доверие и безопасность</span>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <div class="help__form__container">
+                        <header class="help__form__header">
+                            <span class="text text--bold">Не смогли найти ответ на свой вопрос?</span>
+                        </header>
+                    
+                        <!-- Создаём форму и указываем её обработчик и метод --> 
+                        <form action="#" method="post" name="form" class="help__form"> 
+                            <!-- Поле ввода имени --> 
+                            <input name="name" type="text" placeholder="Ваше имя" class="help__form__name text" /> 
+
+                            <!-- Поле ввода почты --> 
+                            <input name="email" type="text" placeholder="Ваша почта" class="help__form__email text" /> 
+                            <br /> 
+
+                            <!-- Текстовое поле для самого сообщения -->
+                            <textarea cols="32" name="message" rows="5" class="help__form__textarea text" placeholder="Ваш поврос"></textarea>
+                            <br /> 
+                            <!-- Кнопка с надписью «Отправить», которая запускает обработчик формы -->
+                            <input type="submit" value="Отправить" class="help__form__btn text"/> 
+                        </form>
+                    </div>
+                    
+                </div>
+
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+
+            <!-- Колонка с адресом в подвале сайта -->
+            <!-- На мобильном устройстве не отображается -->
+            <div class="footer__contact">
+                <span class="footer__title">Address</span>
+                <div class="footer__text">
+                    <span >59-69 Pearcedale Parade</span>
+                    <span>Broadmeadows VIC 3047</span>
+                </div>
+            </div>
+
+            <!-- Навигационная панель в подвале сайта -->
+            <nav class="footer__nav">
+                <a href="#" class="link link--invert ">Main</a>
+                <a href="#" class="link link--invert ">Study</a>
+                <a href="#" class="link link--invert ">Team</a>
+            </nav>
+
+            <!-- Строка с иконками социальных сетей в подвале сайта -->
+            <div class="footer__social">
+                <span class="footer__title">Join us!</span>
+                <div class="footer__icons">
+                    <img src="../day_2/img/vk.png" class="icon icon--big" alt="Vk logo">
+                    <img src="../day_2/img/twetter.png" class="icon icon--big" alt="Twetter logo">
+                    <img src="../day_2/img/youtube.png" class="icon icon--big" alt="YouTube logo">
+                </div>
+            </div>
+
+            <div class="footer__hr"></div>
+
+            <!-- Линия разделитель -->
+            <span class="footer__copyright">© 2020 CodesFord</span>
+
+            <!-- Кнопки переключения изыка в подвале сайта -->
+            <div class="footer__language__btns">
+                <a href="#" class="link link_with_icon link--invert text--bold">
+                    <img src="../day_2/img/en.png" class="icon"  alt="Englang flag">
+                    En
+                </a>
+                <a href="#" class="link link_with_icon link--invert text--bold">
+                    <img src="../day_2/img/ru.png" class="icon"  alt="Russian flag">
+                    Ru
+                </a>
+            </div>
+
+            <span class="footer__email">email@codesford.com</span>
+        </div>
+    </footer>
+
+    <script src="./help.js"></script>
+    <script>document.getElementById("defaultOpen").click();</script>
+</body>
+</html> 

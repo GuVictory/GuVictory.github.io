@@ -1,0 +1,23 @@
+@media only screen and (max-width: 768px) {
+
+    .help__questions__content {
+        grid-template-rows: repeat(6, 64px);
+        grid-template-columns: 1fr;
+    }
+
+    .help__topics__content {
+        grid-template-rows: repeat(6, 128px);
+        grid-template-columns: 1fr;
+    }
+
+    .help__form {
+        grid-template-areas: 
+            "help__form__name"
+            "help__form__email"
+            "help__form__textarea"
+            "help__form__btn";
+        grid-template-rows: 50px 50px 128px 50px;
+        grid-template-columns: 100%;
+    }
+
+}
