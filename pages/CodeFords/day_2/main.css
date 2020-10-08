@@ -1,0 +1,212 @@
+/**  ---------- Основные общие стили ---------- **/
+html {
+    overflow: hidden;
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    justify-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    transition: 0.5s linear; /* Время изменения */
+}
+
+.link_with_icon {
+    padding: 0 0.7rem 0 0.5rem;
+}
+
+.link:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.link--invert {
+    color: white;
+}
+
+.link--invert:hover {
+    background-color: rgb(229, 229, 229);
+    color: black;
+}
+
+.link--primary {
+    background-color: rgb(69, 96, 245);
+    color: white;
+}
+
+.link--primary:hover {
+    color: black;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text--bold {
+    font-weight: 700;
+}
+
+.text--light {
+    font-weight: 200;
+}
+
+.icon {
+    width: 1rem;
+    margin: 0 0.2rem;
+}
+
+.icon--big {
+    width: 2rem;
+}
+
+/**  ---------- Стили для шапки ---------- **/
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: minmax(100px, 180px) minmax(300px, 2fr) minmax(300px, 1fr);
+    grid-template-rows: 100%;
+    align-items: stretch;
+    height: 64px;
+    min-width: 700px;
+    width: 80vw;
+}
+
+.header__logo {
+    justify-self: start;
+    align-self: center;
+}
+
+.header__nav {
+    display: flex;
+    justify-self: end;
+}
+
+.header__btns {
+    display: flex;
+    justify-self: end;
+}
+
+/**  ---------- Стили для основного блока  ---------- **/
+
+.main {
+    display: grid;
+    grid-area: main;
+    min-width: 700px;
+    width: 80vw;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: minmax(600px, 60vw);
+    grid-template-rows: max-content max-content;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.content__header {
+    display: grid;
+    font-size: 1.5rem;
+}
+
+.content__ol {
+    display: grid;
+    margin: 1rem;
+}
+
+/**  ---------- Стили для подвала  ---------- **/
+
+.footer {
+    display: grid;
+    grid-area: footer;
+    height: max-content;
+    width: 100%;
+    background-color: rgb(28, 29, 93);
+    justify-content: center;
+    color: white;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-areas: 
+        "footer_contact footer_nav footer_social"
+        "footer_hr footer_hr footer_hr"
+        "footer_copyright footer_language_btns footer_email";
+    
+    grid-template-columns: minmax(200px, 1fr) minmax(300px, 3fr) minmax(200px, 1fr);
+    grid-template-rows: auto 2px auto;
+
+    min-width: 700px;
+    width: 80vw;
+    align-items: center;
+    height: 200px;
+}
+
+.footer__hr {
+    grid-area: footer_hr;
+    height: 1.5px;
+    background-color: gray;
+}
+
+.footer__contact {
+    grid-area: footer_contact;
+    justify-self: start;
+}
+
+.footer__nav {
+    grid-area: footer_nav;
+    display: flex;
+    justify-self: center;
+}
+
+.footer__social {
+    display: inline-grid;
+    grid-area: footer_social;
+    justify-self: end;
+}
+
+.footer__title {
+    display: grid;
+    justify-self: end;
+}
+
+.footer__text {
+    color: grey;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+.footer__icons {
+    display: flex;
+    justify-content: end;
+    margin: 1rem 0;
+}
+
+.footer__copyright {
+    grid-area: footer_copyright;
+    justify-self: start;
+}
+
+.footer__language__btns {
+    grid-area: footer_language_btns;
+    display: flex;
+    justify-self: center;
+}
+
+.footer__email {
+    grid-area: footer_email;
+    justify-self: end;
+}

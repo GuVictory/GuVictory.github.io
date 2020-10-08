@@ -1,0 +1,110 @@
+    /** Отдельная media для адаптивности под мобильные устройства: **/
+
+@media only screen and (max-width: 768px) {
+
+    /**  ---------- Основные общие стили ---------- **/
+    .body {
+        width: 100vw;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+        justify-items: center;
+    }
+
+
+    /**  ---------- Стили для шапки ---------- **/
+
+    .header {
+        grid-template-rows: 2rem 2rem;
+        grid-template-columns: 100vw;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+    }
+
+    .header__logo {
+        display: none;
+    }
+    
+    .header__nav {
+        justify-self: center;
+    }
+    
+    .header__btns {
+        justify-self: center;
+    }
+
+
+    /**  ---------- Стили для основного блока  ---------- **/
+
+    .main {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        justify-content: center;
+        margin: 2rem 0.5rem;
+    }
+
+    .content__li {
+        margin-bottom: 0.5rem;
+    }
+
+
+    /**  ---------- Стили для подвала  ---------- **/
+
+    .footer {
+        height: auto;
+        max-width: 100vw;
+    }
+    
+    .footer__container {
+        display: grid;
+        grid-template-areas: 
+            "footer_nav"
+            "footer_email"
+            "footer_social"
+            "footer_hr"
+            "footer_language_btns"
+            "footer_copyright";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, max-content) 2px repeat(2, max-content);
+        max-width: 100vw;
+        min-width: 100vw;
+    }
+
+    .footer__nav {
+        justify-self: center;
+        margin: 1rem 0;
+    }
+
+    .footer__contact {
+        display: none;
+    }
+
+    .footer__text {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0;
+    }
+
+    .footer__icons, .footer__language__btns {
+        justify-content: center;
+        margin: 0.5rem 0;
+    }
+    
+    .footer__copyright {
+        justify-self: center;
+        margin: 0;
+    }
+
+    .footer__social, .footer__title, .footer__email {
+        justify-self: center;
+    }
+  }
