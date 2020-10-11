@@ -56,3 +56,31 @@ class LocalData(object):
         'student_topics': [],
         'instructor_topics': []
     }
+
+    @classmethod
+    def get(cls, datatype):
+        return cls.storage[datatype]
+
+    @classmethod
+    def create(cls, datatype, data):
+        data['id'] = len(cls.storage[datatype])
+        cls.storage[datatype].append(data)
+        return data
+
+    @classmethod
+    def get_by_id(cls, datatype, id):
+        try:
+            data = cls.storage[datatype][id]
+            print(data)
+            return (True, data)
+        except:
+            return (False, None)
+
+    @classmethod
+    def change_by_id(cls, datatype, new_value, id):
+        try:
+            new_value['id'] = id
+            cls.storage[datatype][id] = new_value
+            return (True, new_value)
+        except:
+            return (False, None)
