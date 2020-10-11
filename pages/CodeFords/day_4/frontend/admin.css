@@ -1,0 +1,240 @@
+@import url("../../../../assets/css/fontawesome-all.min.css");
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+:root {
+    --header-color: #4761f5;
+    --main-color: #FFFFFF;
+    --background-color: #F9FAFB;
+
+    --main-text-color: #212529;
+    --invert-main-text-color: #FFFFFF;
+    --primary-text-color: #4761f5;
+    --secondary-text-color: #9EA0A5;
+
+    --hover-link-color: #4761f5;
+    --active-link-color:  #1c1d5d;
+
+    --normal-btn-color: #FFFFFF;
+    --primary-btn-color: #4761f5;
+
+    --hover-normal-btn-color: #4761f5;
+    --hover-primary-btn-color: #FFFFFF;
+
+    --active-normal-btn-color: #9EA0A5;
+    --active-primary-btn-color: #1c1d5d;
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: 
+        "header header"
+        "navbar main";
+}
+
+.logo {
+    margin-right: 0.5em;
+}
+
+.block {
+    padding: 20px;
+}
+
+.hr {
+    background-color: silver;
+    height: 1px;
+    width: 100%;
+}
+
+/** ----------  Основные блоки  ----------  **/
+.header {
+    display: flex;
+    grid-area: header;
+    background-color: var(--header-color,#4761f5);
+
+    align-items: center;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: var(--main-color, #FFFFFF);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 190px;
+}
+
+.main {
+    display: flex;
+    grid-area: main;
+    background-color: var(--background-color, #F9FAFB);
+
+    flex-direction: column;
+    align-items: center;
+    min-width: 600px;
+}
+
+
+/** ----------  Классы для работы с текстом  ----------  **/
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: var(--main-text-color,  #212529);
+}
+
+.text--bold {
+    font-weight: 700;
+}
+
+.text--light {
+    font-weight: 200;
+}
+
+.text--small {
+    font-size: 0.8em;
+}
+
+.text--big {
+    font-size: 1.2em;
+}
+
+.text--uppercase {
+    text-transform: uppercase;
+}
+
+/** ----------  Классы для работы с ссылками и кнопками ----------  **/
+
+.link {
+    text-decoration: none;
+    transition: 0.3s linear;
+    color: var(--main-text-color,  #212529);
+}
+
+.link:hover {
+    color: var(--hover-link-color, #4761f5);
+}
+
+.link:active {
+    color: var(--active-link-color, #1c1d5d);
+}
+
+.button {
+    background-color: var(--normal-btn-color, #FFFFFF);
+    border: 1px solid rgba(22,101,216,0.10);
+    padding: 0.5em 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/** ----------  БЭМ классы для блока navbar  ----------  **/
+
+.navbar__item {
+    font-size: 1.1em;
+    margin: 1em 0;
+}
+
+
+/** ----------  БЭМ классы для блока main  ----------  **/
+
+.main__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    margin: 20px;
+}
+
+.main__header__title {
+
+}
+
+.main__header__button {
+    background-color: #47B881;
+    color: var(--invert-main-text-color, #FFFFFF);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+    transition: 0.3s;
+}
+
+.main__header__button:hover {
+    box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.14), -4px 4px 4px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+
+.main__header__button:active {
+    background-color: #3fa172;
+    box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.14), -4px 4px 4px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+
+.main__header__button__text {
+    color: var(--invert-main-text-color, #FFFFFF);
+    font-size: 1.5em;
+}
+
+
+.main__header__button__icon {
+    font-size: 1.5em;
+    margin-left: 0.5rem;
+}
+
+.main__body {
+    display: grid;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: max-content;
+    grid-gap: 20px;
+}
+
+
+/** ----------  Классы для работы с карточками вопросов ----------  **/
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.card_title {
+    margin: 0.5em 0;
+}
+
+.card_icon {
+    margin: 0.5em 0;
+    font-size: 1.5em;
+}
+
+.card__footer {
+    width: 100%;
+    display: flex;
+    margin: 0.5em 0;
+    justify-content: space-between;
+}
+
+.card_edit:hover {
+    color: #3fa172;
+}
+
+.card_delete:hover {
+    color: #EC4C47;
+}

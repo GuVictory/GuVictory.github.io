@@ -10,6 +10,7 @@ from localdata import LocalData
 
 
 class HTTPRequestHandler(BaseHTTPRequestHandler):
+
     def _set_headers(self, status_code, json_flag, message=''):
         if message != '':
             self.send_response(status_code, message)
@@ -18,7 +19,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
 
         if json_flag:
             self.send_header('Content-Type', 'application/json; charset=UTF-8')
-
+        self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
 
     def do_GET(self):
