@@ -1,4 +1,4 @@
-const mainUrl = 'https://95.181.230.247:755/api/';
+const mainUrl = 'https://www.guvictory.xyz/api/';
 
 async function helpTabChange(event, tabName) {
 
