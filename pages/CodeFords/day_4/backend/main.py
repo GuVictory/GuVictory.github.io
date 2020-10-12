@@ -1,14 +1,13 @@
-import logging
 from http.server import HTTPServer
 from server import HTTPRequestHandler
 
 
 def run(ip='127.0.0.1', port=8080, handler_class=HTTPRequestHandler):
-    logging.basicConfig(filename='logs.log', level=logging.DEBUG)
+    # logging.basicConfig(filename='logs.log', level=logging.DEBUG)
 
     server = HTTPServer((ip, port), handler_class)
-    logging.info(f'HTTP Server Running \nip: {ip}\nport: {port}\n')
-    print(f'HTTPServer running on: {ip}:{port}')
+    # logging.info(f'HTTP Server Running \nip: {ip}\nport: {port}\n')
+    # print(f'HTTPServer running on: {ip}:{port}')
     try:
         server.serve_forever()
     except KeyboardInterrupt:

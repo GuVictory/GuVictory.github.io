@@ -5,7 +5,7 @@ import cgi
 import json
 import threading
 from urllib import parse
-import logging
+# import logging
 from localdata import LocalData
 
 
@@ -39,8 +39,8 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        logging.info(
-            f'GET request,\nPath: {str(self.path)}\nHeaders:\n{str(self.headers)}\n')
+        # logging.info(
+        # f'GET request,\nPath: {str(self.path)}\nHeaders:\n{str(self.headers)}\n')
 
         # * URL для отключения сервера
         if re.search('/api/shutdown', self.path):
@@ -99,8 +99,8 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         rfile_str = self.rfile.read(length).decode('utf8')
         new_data = json.loads(rfile_str)
 
-        logging.info(
-            f'POST request\nPath: {str(self.path)}\nHeaders:\n{str(self.headers)}Body:\n{new_data}\n')
+        # logging.info(
+        # f'POST request\nPath: {str(self.path)}\nHeaders:\n{str(self.headers)}Body:\n{new_data}\n')
 
         # * Создание нового часто задаваемого вопроса у студентов
         if re.search('/api/student_questions/$', self.path):
