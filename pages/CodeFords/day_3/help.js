@@ -1,4 +1,4 @@
-const mainUrl = 'http://95.181.230.247:755/api/';
+const mainUrl = 'https://95.181.230.247:755/api/';
 
 async function helpTabChange(event, tabName) {
 
