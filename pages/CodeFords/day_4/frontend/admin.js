@@ -1,4 +1,4 @@
-const mainUrl = 'http://localhost:8000/api/'
+const mainUrl = 'http://95.181.230.247:755/api/'
 const app = document.getElementById('app');
 
 if (!app) console.log('app not found');

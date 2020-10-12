@@ -1,5 +1,11 @@
+#!/usr/bin/env python3
+
 from http.server import HTTPServer
 from server import HTTPRequestHandler
+
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 
 def run(ip='127.0.0.1', port=8080, handler_class=HTTPRequestHandler):
