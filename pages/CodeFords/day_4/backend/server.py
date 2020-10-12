@@ -11,7 +11,21 @@ from localdata import LocalData
 
 class HTTPRequestHandler(BaseHTTPRequestHandler):
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self._send_cors_headers()
+        self.end_headers()
+
+    def _send_cors_headers(self):
+        """ Sets headers required for CORS """
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods",
+                         "GET,POST,OPTIONS,DELETE")
+        self.send_header("Access-Control-Allow-Headers",
+                         "x-api-key,Content-Type")
+
     def _set_headers(self, status_code, json_flag, message=''):
+
         if message != '':
             self.send_response(status_code, message)
         else:
@@ -19,7 +33,9 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
 
         if json_flag:
             self.send_header('Content-Type', 'application/json; charset=UTF-8')
-        self.send_header("Access-Control-Allow-Origin", "*")
+
+        self._send_cors_headers()
+
         self.end_headers()
 
     def do_GET(self):
@@ -126,6 +142,29 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             self._send_error_message(
                 'Oops, no page with this address was found')
 
+    do_PUT = do_POST
+
+    def do_DELETE(self):
+        # * Удаление часто задаваемого вопроса для студентов по id
+        if re.search('/api/student_questions/\d+$', self.path):
+            record_id = int(self.path.split('/')[-1])
+            self._delete_data_by_id('student_questions', record_id)
+
+        # * Удаление часто задаваемого вопроса для инструкторов по id
+        elif re.search('/api/instructor_questions/\d+$', self.path):
+            record_id = int(self.path.split('/')[-1])
+            self._delete_data_by_id('instructor_questions', record_id)
+
+        # * Удаление топика для студентов по id
+        elif re.search('/api/student_topics/\d+$', self.path):
+            record_id = int(self.path.split('/')[-1])
+            self._put_dat_delete_data_by_ida_by_id('student_topics', record_id)
+
+        # * Удаление топика для инструкторов по id
+        elif re.search('/api/instructor_topics/\d+$', self.path):
+            record_id = int(self.path.split('/')[-1])
+            self._delete_data_by_id('instructor_topics', record_id)
+
     def _get_data(self, localdata):
         self._set_headers(200, True)
         data = json.dumps(LocalData.get(localdata), ensure_ascii=False)
@@ -160,6 +199,16 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             self._set_headers(404, True)
             self._send_error_message(
                 'Oops, it looks like you are trying to change a not existing entry!')
+
+    def _delete_data_by_id(self, localdata, record_id):
+        was_deleted = LocalData.delete_by_id(localdata, record_id)
+
+        if was_deleted:
+            self._set_headers(200, False)
+        else:
+            self._set_headers(404, True)
+            self._send_error_message(
+                'Oops, it looks like you are trying to delete a not existing entry!')
 
     def _shutdown(self):
         # ! Отключение необхдимо производить в отдельном потоке

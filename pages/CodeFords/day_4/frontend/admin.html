@@ -14,27 +14,42 @@
     </header>
 
     <nav class="navbar block">
-        <a href="#" section="student_questions" class="navbar__item text link">Student Questions</a>
-        <a href="#" section="student_topics"  class="navbar__item text link">Student Topics</a>
+        <a
+            href="#"
+            section="student_questions"
+            class="navbar__item text link active"
+            id="student_questions_nav">Student Questions</a>
+
+        <a
+            href="#"
+            section="student_topics"
+            class="navbar__item text link"
+            id="student_topics_nav">Student Topics</a>
         <div class="hr"></div>
-        <a href="#" section="instructor_questions"  class="navbar__item text link">Instructor Questions</a>
-        <a href="#" section="instructor_topics"  class="navbar__item text link">Instructor Topics</a>
+        <a
+            href="#"
+            section="instructor_questions"
+            class="navbar__item text link"
+            id="instructor_questions_nav">Instructor Questions</a>
+
+        <a 
+            href="#" 
+            section="instructor_topics"  
+            class="navbar__item text link"
+            id="instructor_topics_nav">Instructor Topics</a>
         <div class="hr"></div>
     </nav>
 
     <main class='main block'>
         <div class="main__header">
-            <button class="button main__header__button">
-                <span class="text main__header__button__text">Add new</span>
-                <i class="main__header__button__icon fas fa-plus-circle"></i>
+            <button class="button main__header__button" section="create_new">
+                <span class="text main__header__button__text" section="create_new">Add new</span>
+                <i class="main__header__button__icon fas fa-plus-circle" section="create_new"></i>
             </button>
             <span class="text text--uppercase text--big main__header__title" id="main_title_js">Student Questions</span>
         </div>
         <div class="hr"></div>
         <div class="main__body" id="main__body">
-
-            
-
         </div>
     </main>
 

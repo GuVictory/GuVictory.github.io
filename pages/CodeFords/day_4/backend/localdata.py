@@ -84,3 +84,13 @@ class LocalData(object):
             return (True, new_value)
         except:
             return (False, None)
+
+    @classmethod
+    def delete_by_id(cls, datatype, id):
+        try:
+            cls.storage[datatype] = cls.storage[datatype][:id] + \
+                cls.storage[datatype][id + 1:]
+
+            return True
+        except:
+            return False
