@@ -36,8 +36,9 @@
 
     .header__menu-icon {
         display: flex;
-        justify-self: end;
         z-index: 11;
+        font-size: 2em;
+        transition: 0.3s;
     }
 
     .header__menu-icon.open {
