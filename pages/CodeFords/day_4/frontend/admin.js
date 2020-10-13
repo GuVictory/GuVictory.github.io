@@ -198,3 +198,16 @@ async function onDeleteButtonClicked(linkUrl) {
     });
     navbarLinkClicked(linkUrl.split('/')[0]);
 }
+
+const openMobileMenu = (evt) => {
+    navbar = document.getElementById('navbar');
+    menuBtn = document.getElementById('menu_icon');
+
+    if(menuBtn.classList.contains('open')) {
+        menuBtn.classList.remove('open');
+        navbar.classList.remove('open');
+    } else {
+        menuBtn.classList.add('open');
+        navbar.classList.add('open');
+    }
+}

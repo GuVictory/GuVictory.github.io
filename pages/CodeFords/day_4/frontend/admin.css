@@ -59,11 +59,21 @@ html {
 
 /** ----------  Основные блоки  ----------  **/
 .header {
+    z-index: 10;
     display: flex;
     grid-area: header;
     background-color: var(--header-color,#4761f5);
-
+    justify-content: space-between;
     align-items: center;
+}
+
+.header__menu-icon {
+    display: none;
+    font-size: 2em;
+}
+
+.header__menu-icon:active{
+    color: var(--main-color, #FFFFFF);
 }
 
 .navbar {
@@ -187,10 +197,6 @@ html {
     align-items: center;
     width: calc(100% - 40px);
     margin: 20px;
-}
-
-.main__header__title {
-
 }
 
 .main__header__button {
