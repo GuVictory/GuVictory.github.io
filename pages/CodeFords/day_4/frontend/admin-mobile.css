@@ -37,6 +37,7 @@
     .header__menu-icon {
         display: flex;
         justify-self: end;
+        z-index: 11;
     }
 
     .header__menu-icon.open {
