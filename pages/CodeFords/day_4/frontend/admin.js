@@ -60,6 +60,12 @@ async function navbarLinkClicked(linkUrl) {
             mainBody.innerHTML += newElement;
         });
 
+        // При нажатии на ктопку меню на мобильном устройстве меню свернется
+        navbar = document.getElementById('navbar');
+        if(navbar.classList.contains('open')) {
+            openMobileMenu();
+        }
+
     } else {
         alert("HTTP-Error: " + response.status);
     }
